@@ -336,24 +336,20 @@ section { padding: 84px 0; }
   box-shadow: var(--shadow);
   border-color: var(--accent);
 }
-.service-icon {
-  width: 52px;
-  height: 52px;
-  background: linear-gradient(135deg, #edeae4, #dbd7cf);
+.service-image {
+  aspect-ratio: 16 / 8;
+  overflow: hidden;
   border-radius: var(--radius-sm);
-  display: flex;
-  align-items: center;
-  justify-content: center;
   margin-bottom: 1.4rem;
+  background: var(--bg);
 }
-.service-icon::before {
-  content: '';
-  display: block;
-  width: 20px;
-  height: 20px;
-  background: var(--accent);
-  clip-path: polygon(38% 0%,62% 0%,62% 38%,100% 38%,100% 62%,62% 62%,62% 100%,38% 100%,38% 62%,0% 62%,0% 38%,38% 38%);
+.service-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--t);
 }
+.service-card:hover .service-image img { transform: scale(1.04); }
 .service-card h3 { font-size: 1.15rem; font-weight: 700; color: var(--primary); margin-bottom: 0.6rem; }
 .service-card p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 1.4rem; }
 .service-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
@@ -693,7 +689,6 @@ a.press-card { text-decoration: none; display: block; cursor: pointer; transitio
 }
 a.interest-card { text-decoration: none; display: block; }
 .interest-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); border-color: var(--accent); cursor: pointer; }
-.interest-em { display: block; width: 28px; height: 3px; background: var(--accent); border-radius: 2px; margin: 0 auto 1.25rem; }
 .interest-card h3 { font-size: 0.95rem; font-weight: 700; color: var(--primary); margin-bottom: 0.5rem; }
 .interest-card p { font-size: 0.84rem; color: var(--text-muted); line-height: 1.65; }
 
@@ -788,7 +783,7 @@ a.interest-card { text-decoration: none; display: block; }
   .hero-eyebrow { justify-content: center; }
   .hero h1 { font-size: 2.5rem; }
   .hero-actions { justify-content: center; }
-  .hero-card { display: none; }
+  .hero-card { display: flex; width: min(100%, 340px); margin: 0 auto; text-align: left; }
 
   .stats-bar .container { grid-template-columns: repeat(2, 1fr); }
   .stat-item:nth-child(2) { border-right: none; }
